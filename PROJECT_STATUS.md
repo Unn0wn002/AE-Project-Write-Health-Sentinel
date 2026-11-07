@@ -18,8 +18,8 @@ Reconciled on 2026-11-06 from the files cited on each line. Nothing was tested, 
 - Green PASS and amber CLOUD_SYNCED Location: PASS_BOUNDED_NATIVE, but recorded only on the unmerged PR #3 branch (`evidence/native-20261102-green-and-location/README.md` on `origin/docs/green-location-evidence-20261102`; not on `main`).
 
 **Remaining gates (NOT_RUN / BLOCKED)**
-- W04 Collect Files: NOT_RUN (not implemented). W07 large project: NOT_RUN. W08 SMB: NOT_RUN, likely BLOCKED (no share known) (`TEST_MATRIX.md`).
-- Partial cases NOT_RUN: autosave freshness/WARN and custom location (W03), read-only attribute and disk full (W05), sync conflicts and offline files (W06), red FAIL result state (`TEST_MATRIX.md`, PR #3 evidence README). The Japanese UI has not had a native-speaker review (`KNOWN_LIMITATIONS.md`).
+- W04 Collect Files: NOT_RUN (not implemented). W07 large project (about 64 MB): PASS_BOUNDED_NATIVE 2026-11-07 (`evidence/native-20261107-w07-fail/README.md`). W08 SMB: NOT_RUN, likely BLOCKED (no share known) (`TEST_MATRIX.md`).
+- Partial cases NOT_RUN: autosave freshness/WARN and custom location (W03), read-only attribute and disk full (W05), sync conflicts and offline files (W06), the zero-byte FAIL case (`TEST_MATRIX.md`); the red FAIL state itself (project file missing after the save) is PASS_BOUNDED_NATIVE 2026-11-07. The Japanese UI has not had a native-speaker review (`KNOWN_LIMITATIONS.md`).
 
 **Open defects and exclusions**
 - F5: the autosave interval is not read, so staleness is never judged. A custom autosave location is not handled. Hashing/corruption detection, Collect Files and file export are excluded or not implemented (`TEST_MATRIX.md`, `KNOWN_LIMITATIONS.md`, `D:/Work/Projects/_docs/AUDIT_20261104/README.md`).

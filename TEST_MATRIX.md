@@ -20,7 +20,7 @@ Evidence classes: VERIFIED_THIS_SESSION, HISTORICAL_RECORDED, UNVERIFIED, NOT_RU
 | W04 | Collect Files | NOT_RUN (not implemented in v0) |
 | W05 | Write blocked (locked disposable file; rename-over denied) | PASS_BOUNDED_NATIVE 2026-11-01 (NOT_UPDATED then PASS after release; see evidence/native-20261101-w05). Read-only attribute / disk full NOT_RUN |
 | W06 | Cloud-synced path (OneDrive) | PASS_BOUNDED_NATIVE 2026-11-01 (see evidence/native-20261101-w06). Sync conflicts / offline files NOT_RUN |
-| W07 | Large project | NOT_RUN |
+| W07 | Large project (about 64 MB) | PASS_BOUNDED_NATIVE 2026-11-07 (evidence/native-20261107-w07-fail); red FAIL state (file missing after save) also PASS_BOUNDED_NATIVE |
 | W08 | Network path (SMB) | NOT_RUN (likely BLOCKED: no share known) |
 | W10 | v0.2 ScriptUI panel as a floating palette (Run Script File): capture, save, verify; autosave name and age shown | PASS_BOUNDED_NATIVE 2026-11-01 (evidence/native-20261101-panel-v02) |
 | W11 | Panel installed via File > Scripts > Install ScriptUI Panel, shown in the Window menu after restart, and docked; capture/save/verify PASS inside the dock | PASS_BOUNDED_NATIVE 2026-11-01 (evidence/native-20261101-install-dock) |
