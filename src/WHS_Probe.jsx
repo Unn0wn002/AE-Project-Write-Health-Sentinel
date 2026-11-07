@@ -391,7 +391,15 @@ function whsToJson(v) {
             win.layout.layout(true);
         };
 
-        win.onResizing = win.onResize = function () { this.layout.resize(); };
+        // In a narrow dock the three buttons do not fit on one line and the last one was clipped: stack them instead.
+        function fitRow() {
+            var width = safe(function () { return win.size.width; }, 0);
+            var want = (width > 0 && width < 300) ? "column" : "row";
+            if (row.orientation !== want) { row.orientation = want; }
+            row.alignChildren = want === "column" ? ["left", "top"] : ["left", "center"];
+        }
+        win.onResizing = win.onResize = function () { fitRow(); this.layout.resize(); };
+        fitRow();
         if (win instanceof Window) { win.center(); win.show(); } else { win.layout.layout(true); }
         return win;
     }
